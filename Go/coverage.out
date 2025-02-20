@@ -1,0 +1,19 @@
+mode: set
+Go/queue/queue.go:19.24,21.2 1 1
+Go/queue/queue.go:24.41,27.19 2 1
+Go/queue/queue.go:27.19,29.3 1 1
+Go/queue/queue.go:30.2,32.19 2 1
+Go/queue/queue.go:32.19,34.3 1 1
+Go/queue/queue.go:36.2,36.11 1 1
+Go/queue/queue.go:40.35,41.19 1 1
+Go/queue/queue.go:41.19,43.3 1 1
+Go/queue/queue.go:45.2,48.19 3 1
+Go/queue/queue.go:48.19,50.3 1 1
+Go/queue/queue.go:52.2,53.14 2 1
+Go/queue/queue.go:56.41,57.19 1 1
+Go/queue/queue.go:57.19,59.6 1 1
+Go/queue/queue.go:60.5,60.24 1 1
+Go/queue/queue.go:63.40,64.19 1 1
+Go/queue/queue.go:64.19,66.6 1 1
+Go/queue/queue.go:67.5,67.24 1 1
+Go/queue/queue.go:70.28,72.2 1 1
