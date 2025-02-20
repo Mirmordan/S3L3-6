@@ -1,0 +1,76 @@
+CREATE DATABASE support
+\c support
+CREATE TABLE Employers (
+    ID SERIAL PRIMARY KEY,
+    Username VARCHAR(255),
+    Mail VARCHAR(255)
+);
+INSERT INTO Employers (Username, Mail)
+VALUES 
+    ('Mirmordan', 'Mirmorda@mail.ru'),
+    ('BigBoss', 'BigBoss@gmail.com'),
+    ('Vova228', 'Vova228@gmail.com');
+    ('Salaga1234', 'Salaga1234@gmail.com');
+CREATE TABLE Requests (
+    ID SERIAL PRIMARY KEY ,
+    UserID INT,
+    Request VARCHAR(1023)
+);
+INSERT INTO Requests (UserID, Request)
+VALUES 
+    (1, 'Please repair printer'),
+    (2, 'Dont repair printer for Mirmordan'),
+    (3, 'Bring me some cofee'),
+    (1, 'And bring me some cofee'),
+    (4, 'Papers, please'),
+    (2, 'Cofee');
+
+
+\d employers --Посмотреть поля субд
+
+
+DELETE FROM Requests
+WHERE Request LIKE '%printer%'; --Удаление всех запросов где есть printer
+
+
+
+UPDATE Employers
+SET Mail = 'newemail@example.com'  --ВВод кому-то новой почты
+WHERE Username = 'Mirmordan';
+
+
+ALTER TABLE Employers           --Добавление колонн
+ADD COLUMN Phone VARCHAR(255);
+
+
+SELECT COUNT(*) FROM Employers;
+
+
+BEGIN;
+DROP TABLE Requests;
+ROLLBACK;
+
+
+SELECT Request, COUNT(*) AS count
+FROM Requests
+WHERE Request LIKE '%cofee%'
+GROUP BY Request;
+
+
+CREATE INDEX idx_name ON Employers(Username);
+
+EXPLAIN SELECT * FROM Employers
+WHERE Username = 'Mirmordan';  
+
+
+SELECT 
+    emp.ID AS UserID,
+    emp.Username,
+    req.Request
+FROM Employers emp
+LEFT JOIN 
+    Requests req ON emp.ID = req.UserID
+ORDER BY 
+    emp.ID;
+
+
